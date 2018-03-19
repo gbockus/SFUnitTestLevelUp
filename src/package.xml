@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>BadController</members>
+        <members>GoodController</members>
+        <members>AccountService</members>
+        <members>AccountDao</members>
+        <members>ContactService</members>
+        <members>ContactDao</members>
+        <members>BadControllerTest</members>
+        <members>GoodControllerTest</members>
+        <members>AccountDaoTest</members>
+        <members>ContactDaoTest</members>
+        <members>AccountServiceTest</members>
+        <members>ContactServiceTest</members>
+        <members>AbstractMock</members>
+        <members>AccountServiceMock</members>
+        <members>MockException</members>
+        <members>AccountDaoMock</members>
+        <members>ContactDaoMock</members>
+        <members>ContactServiceMock</members>
+        <members>UserDao</members>
+        <members>ServiceException</members>
+        <members>AccountServiceMockTest</members>
+        <name>ApexClass</name>
+    </types>
+    <version>41.0</version>
+</Package>

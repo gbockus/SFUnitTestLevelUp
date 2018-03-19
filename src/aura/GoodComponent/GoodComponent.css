@@ -1,0 +1,18 @@
+.THIS {
+    background-color: white;
+    padding: 1rem;
+}
+
+h2.THIS {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.THIS li {
+    cursor: pointer;
+}
+
+.THIS button {
+    margin-top: 1rem;
+}

@@ -1,0 +1,49 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="GoodController" >
+	<aura:attribute name="accounts" type="Account[]"></aura:attribute>
+	<aura:attribute name="selectedAccount" type="Account"></aura:attribute>
+	<aura:attribute name="contacts" type="Contact[]"></aura:attribute>
+	<aura:attribute name="selectedContact" type="Contact"></aura:attribute>
+	<aura:attribute name="successMessage" type="String" default=""></aura:attribute>
+	<aura:attribute name="errorMessage" type="String" default=""></aura:attribute>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<h1>Good Compnonent</h1>
+
+	<h2>Accounts</h2>
+	<ul>
+		<aura:iteration items="{!v.accounts}" var="acct">
+			<li id="{!acct.Id}" onclick="{!c.selectAccount}">{!acct.Name}</li>
+		</aura:iteration>
+	</ul>
+
+	<h2>Contacts</h2>
+	<ul>
+		<aura:iteration items="{!v.contacts}" var="contact">
+			<li id="{!contact.Id}" onclick="{!c.selectContact}">{!contact.FirstName}&nbsp;{!contact.LastName}</li>
+		</aura:iteration>
+	</ul>
+
+	<div class="selected-section">
+		<div>
+			Selected Account: <aura:if isTrue="{! v.selectedAccount != null}">
+				<lightning:formattedText linkify="false" value="{!v.selectedAccount.Name}" />
+			</aura:if>
+
+		</div>
+		<div>
+			Selected Contact: <aura:if isTrue="{! v.selectedContact != null}">
+				<lightning:formattedText linkify="false" value="{!v.selectedContact.FirstName + ' ' + v.selectedContact.LastName}" />
+			</aura:if>
+		</div>
+		<lightning:button variant="brand" label="Associate" onclick="{! c.associatedContactAccount }" />
+	</div>
+	<div>
+		<aura:if isTrue="{! v.successMessage != ''}">
+			<lightning:formattedText linkify="false" value="{!v.successMessage}" />
+		</aura:if>
+		<aura:if isTrue="{! v.errorMessage != ''}">
+			<lightning:formattedText linkify="false" value="{!v.errorMessage}" />
+		</aura:if>
+	</div>
+</aura:component>
